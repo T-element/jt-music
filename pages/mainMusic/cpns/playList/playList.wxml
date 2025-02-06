@@ -1,0 +1,7 @@
+<wxs src="/utils/format.wxs" module="fmt" />
+
+<view class="playList">
+  <block wx:for="{{playList}}" wx:key="id">
+    <playListItem class="item" itemData="{{item}}" />
+  </block>
+</view>

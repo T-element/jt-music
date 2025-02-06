@@ -1,0 +1,12 @@
+<view class="title">{{listData.name}}</view>
+<view class="list">
+  <block wx:for="{{listData.tracks}}" wx:key="id">
+    <songItem 
+      index="{{index + 1}}" 
+      itemData="{{item}}" 
+      bind:tap="onItemClick" 
+      data-playlist="{{listData.tracks}}"
+      data-index="{{index}}"
+    />
+  </block>
+</view>

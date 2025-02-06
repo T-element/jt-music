@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+
+.header .title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header .moreBtn {
+  color: #999;
+  font-size: 14px;
+}

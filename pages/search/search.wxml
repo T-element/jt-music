@@ -1,0 +1,71 @@
+<van-search 
+  placeholder="搜索你喜欢的歌曲" 
+  shape="round"
+  background="#FAFAFA"
+  bind:focus="onSearchBoxFocus"
+  bind:blur="onSearchBoxBlur"
+  bind:change="onSearchBoxChange"
+  bind:search="onSearchBoxSearch"
+  focus="{{true}}"
+/>
+
+<view class="hotSearch" wx:if="{{searchKeyword.length === 0 && !isSearchListShow }}">
+  <view class="title">热门搜索</view>
+  <view class="tags">
+    <block wx:for="{{hotSearchData}}" wx:key="first">
+      <view 
+        class="tag {{index === 0 ? 'highlight' : ''}}"
+        bind:tap="onHotSearchItemClick"
+        data-tag="{{item.first}}"
+      >{{item.first}}</view>
+    </block>
+  </view>
+</view>
+
+<view 
+  class="searchSuggest" 
+  wx:if="{{searchKeyword.length !== 0 && !isSearchListShow}}" 
+>
+  <view class="title">搜索 "{{searchKeyword}}"</view>
+  <view class="list" bind:tap="onSearchSuggestItemClick" >
+    <block wx:for="{{searchSuggest}}" wx:key="id">
+      <view class="item">
+        <image src="/assets/images/icons/search_icon.png" mode="widthFix" class="icon"/>
+        <view class="text" data-songName="{{item.name}}">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="search" wx:if="{{isSearchListShow}}" >
+  <view class="title">
+    <view class="left">最佳匹配</view>
+    <view class="right" bind:tap="onSearchCancelClick">取消</view>
+  </view>
+  <scroll-view class="list" 
+    scroll-y 
+    show-scrollbar="{{false}}" 
+    scroll-top="{{scrollTop}}"
+    enhanced
+    bindscrolltolower="onScrollViewReachBottom"
+    bindscroll="onScroll"
+    scroll-with-animation
+  >
+    <block wx:for="{{songsData}}" wx:key="id">
+      <view class="item" data-index="{{index}}" bind:tap="onSearchItemClick" >
+        <view class="left">{{index + 1}}</view>
+        <view class="right">
+          <view class="name">{{item.name}}</view>
+          <view class="artists">
+            <image src="/assets/images/icons/sq_icon.png" mode="widthFix" class="icon"/>
+            <text class="name">{{item.artists[0].name}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="scrollToTop" bind:tap="onBackTopClick" wx:if="{{isScollToTopShow}}" >
+    <van-icon name="back-top" />
+  </view>
+</view>
+

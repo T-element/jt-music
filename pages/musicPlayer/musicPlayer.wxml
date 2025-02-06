@@ -1,0 +1,69 @@
+<wxs src="/utils/format.wxs" module="fmt" />
+
+<image src="{{songData.al.picUrl}}" mode="aspectFill" class="bgImage"/>
+<view class="bgCover"></view>
+
+<navBar>
+  <view class="pageTitles" slot="titleSlot">
+    <block wx:for="{{pageTitles}}" wx:key="*this">
+      <view 
+        class="pageTitle {{index === currentPageIndex? 'active' : ''}}" 
+        data-index="{{index}}"
+        bind:tap="onPageTitleClick" 
+      >{{item}}</view>
+      <view class="divider" wx:if="{{index < pageTitles.length - 1}}" >|</view>
+    </block>
+  </view>
+</navBar>
+
+<swiper 
+  style="height: {{playerHeight}}px;" 
+  current="{{currentPageIndex}}"
+  duration="{{200}}"
+  bindchange="onPageIndexChange"
+  easing-function="linear"
+>
+  <swiper-item>
+    <view class="player" >
+    <view class="album">
+      <image src="{{songData.al.picUrl}}" mode="widthFix" class="image"/>
+    </view>
+    <view class="info">
+      <view class="title">{{songData.name}}</view>
+      <view class="name">{{songData.ar[0].name}}</view>
+    </view>
+    <view class="lyric">{{currentLyricText ? currentLyricText : "/"}}</view>
+    <slider bindchange="onSliderChange" class="progress" block-size="{{12}}" value="{{sliderValue}}" />
+    <view class="time">
+      <view class="current">{{fmt.formatTime(currentTime)}}</view>
+      <view class="duration">{{fmt.formatTime(durationTime)}}</view>
+    </view>
+    <view class="controls">
+      <image src="/assets/images/player/play_{{playMode}}.png"  class="mode" bind:tap="onModeBtnClick" />
+      <image src="/assets/images/player/play_prev.png"  class="prev" bind:tap="onPrevBtnClick" />
+      <image src="/assets/images/player/play_{{isMusicPlaying? 'pause' : 'resume'}}.png" class="play" bind:tap="onPlayBtnClick" />
+      <image src="/assets/images/player/play_next.png" class="next" bind:tap="onNextBtnClick"/>
+      <image src="/assets/images/player/play_music.png" class="menu"/>
+    </view>
+  </view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view 
+      class="lyricList"
+      scroll-y
+      scroll-with-animation
+      show-scrollbar="{{false}}"
+      scroll-top="{{lyricScrollTop}}"
+      binddragstart="onDragStart"
+      binddragend="onDragEnd"
+      enhanced
+    >
+      <block wx:for="{{lyricInfos}}" wx:key="time">
+        <view 
+          class="{{index === currentLyricIndex ? 'active' : ''}}" 
+          style="padding-top: {{index === 0 ? (playerHeight/2 - 66) : 0}}px; padding-bottom: {{index === lyricInfos.length-1 ? (playerHeight/2 + 66) : 0}}px;"
+        >{{!!item.text ? item.text : "/"}}</view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>

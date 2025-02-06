@@ -1,0 +1,35 @@
+.navBar {
+  padding: 0 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.nav .center {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.nav .center .defalut {
+  display: none;
+}
+
+.nav .center .slot:empty + .defalut {
+  display: block;
+}
+
+.nav .left,
+.nav .right
+{
+  width: 25px;
+  height: 25px;
+}
+
+.nav .right {
+  visibility: hidden;
+}

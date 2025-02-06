@@ -1,0 +1,9 @@
+<wxs src="/utils/format.wxs" module="fmt" />
+
+<view class="playListItem" bind:tap="onPlayListItemClick" >
+  <view class="album">
+    <image src="{{itemData.coverImgUrl}}" mode="widthFix" class="image" />
+    <view class="count">{{fmt.formatCount(itemData.playCount)}}</view>
+  </view>
+  <view class="content">{{itemData.name}}</view>
+</view>

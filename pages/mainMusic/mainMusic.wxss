@@ -1,0 +1,159 @@
+/* pages/mainMusic/mainMusic.wxss */
+page {
+  --search-background-color: #fff;
+  --search-padding: 10px 0;
+
+  padding: 0 24rpx 10px;
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+}
+
+.banner {
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.banner .image{
+  width: 100%;
+}
+
+.recSongsList .item {
+  display: flex;
+  margin-top: 15px;
+}
+
+.recSongsList .item .left .album {
+  width: 60px;
+  height: 60px;
+  border-radius: 7px;
+}
+
+.recSongsList .item .center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 10px;
+}
+
+.recSongsList .item .center .name {
+  font-size: 12px;
+  color: #999;
+}
+
+.recSongsList .item .right {
+  display: flex;
+  align-items: center;
+  color: #999BA5;
+}
+
+.rankList .listItem{
+  display: flex;
+  height: 115px;
+  margin-top: 10px;
+  border-radius: 7px;
+  background-color: #EEEEEE;
+  overflow: hidden;
+}
+
+.rankList .listItem .left {
+  flex: 1;
+  padding: 12px 0 0 10px;
+  box-sizing: border-box;
+}
+
+.rankList .listItem .left .list {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.rankList .listItem .left .list .item {
+  margin-bottom: 5px;
+}
+
+.rankList .listItem .right {
+  position: relative;
+  width: 115px;
+}
+
+.rankList .listItem .right .album {
+  width: 100%;
+}
+
+.rankList .listItem .right .count {
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  right: 0;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  font-size: 10px;
+}
+
+.playBarPlaceHolder {
+  height: 50px;
+}
+
+.playBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  padding: 0 5px;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+  z-index: 9;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, .1);
+}
+
+.playBar .left {
+  position: relative;
+  flex: 1;
+  margin-right: 5px;
+}
+
+@keyframes myAni {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.playBar .left .album {
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.playBar .left .anim {
+  animation: myAni 15s linear infinite;
+}
+
+.playBar .left .name {
+  font-size: 14px;
+  margin-left: 58px;
+}
+
+.playBar .right .playBtn {
+  width: 25px;
+  margin: 3px 5px 0 0;
+}
+
+.playBar .right .musicMenu {
+  width: 30px;
+  vertical-align: top;
+}

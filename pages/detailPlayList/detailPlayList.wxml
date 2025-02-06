@@ -1,0 +1,37 @@
+<view class="playInfo">
+  <image src="{{playListData.coverImgUrl}}" mode="aspectFill" class="bgImage"/>
+  <view class="bgCover"></view>
+  <view class="content">
+    <image src="{{playListData.coverImgUrl}}" mode="widthFix" class="album"/>
+    <view class="message">
+      <view class="title">{{playListData.name}}</view>
+      <view class="userInfo">
+        <image src="{{playListData.creator.avatarUrl}}" mode="" class="info"/>
+        <view class="name">{{playListData.creator.nickname}}</view>
+      </view>
+      <view class="desc">简介: {{playListData.description}}</view>
+    </view>
+  </view>
+  <view class="funcBar">
+    <view class="favor">
+      <image src="/assets/images/icons/favor_icon.png" mode="widthFix" class="icon"/>
+      <view class="text">{{playListData.subscribedCount}}</view>
+    </view>
+    <view class="share">
+      <image src="/assets/images/icons/share_icon.png" mode="widthFix" class="icon"/>
+      <view class="text">分享</view>
+    </view>
+  </view>
+</view>
+
+<view class="playList">
+  <block wx:for="{{playListData.tracks}}" wx:key="id"> 
+    <songItem 
+      itemData="{{item}}" 
+      index="{{index + 1}}" 
+      bind:tap="onSongItemClick" 
+      data-songlist="{{playListData.tracks}}"
+      data-index="{{index}}"
+    />
+  </block>
+</view>

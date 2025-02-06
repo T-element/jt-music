@@ -1,0 +1,19 @@
+.playList {
+  display: flex;
+  margin-top: 10px;
+  overflow-x: scroll;
+}
+
+.playList::-webkit-scrollbar {
+  display: none;
+}
+
+.playList .item {
+  flex-shrink: 0;
+  width: 115px;
+  margin-right: 10px;
+}
+
+.playList .item:last-child {
+  margin-right: 0;
+}

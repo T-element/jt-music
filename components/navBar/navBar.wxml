@@ -1,0 +1,13 @@
+<view class="navBar">
+  <view class="statusBar" style="height: {{statusBarHeight}}px;"></view>
+  <view class="nav" style="height: {{navBarHeight}}px;">
+    <view class="left" bind:tap="onBackBtnClick"><van-icon name="arrow-left" /></view>
+    <view class="center">
+      <view>
+        <slot name="titleSlot" ></slot>
+      </view>
+      <view class="defalut">{{title}}</view>
+    </view>
+    <view class="right"><van-icon name="arrow-left" /></view>
+  </view>
+</view>

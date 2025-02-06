@@ -1,0 +1,93 @@
+.playInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 230px; 
+  padding: 25px 30px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.playInfo .bgImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9;
+  width: 100%;
+}
+
+.playInfo .bgCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(5px);
+}
+
+.playInfo .content {
+  display: flex;
+}
+
+.playInfo .content .album {
+  width: 118px;
+  height: 118px;
+  border-radius: 8px;
+}
+
+.playInfo .content .message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+.playInfo .content .message .userInfo {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.playInfo .content .message .userInfo .info {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.playInfo .content .message .desc {
+  font-size: 12px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.playInfo .funcBar {
+  display: flex;
+  justify-content: space-around;
+  height: 25px;
+  color: #fff;
+}
+
+.playInfo .funcBar .favor,
+.playInfo .funcBar .share
+{
+  display: flex;
+  align-items: center;
+}
+
+.playInfo .funcBar .icon {
+  width: 22px;
+  margin-right: 5px;
+}
+
+.playList {
+  padding: 10px 20px;
+}

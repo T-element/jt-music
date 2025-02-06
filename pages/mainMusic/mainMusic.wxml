@@ -1,0 +1,104 @@
+<wxs src="/utils/format.wxs" module="fmt" />
+
+<van-search
+  shape="round"
+  background="#FAFAFA"
+  placeholder="请输入搜索关键词"
+  bind:click-input="onSearchClick"
+  disabled="{{true}}"
+/>
+
+<swiper 
+  class="banner"
+  indicator-dots
+  indicator-active-color="#eee"
+  autoplay
+  circular
+  interval="{{2000}}"
+  style="height: {{bannerHeight}}px"
+>
+  <block wx:for="{{banners}}" wx:key="targetId">
+    <swiper-item class="item">
+      <image 
+        class="image" 
+        src="{{item.imageUrl}}" 
+        mode="widthFix"
+        bindload="onBannerImageLoaded"
+        />
+    </swiper-item>
+  </block>
+</swiper>
+
+<section title="推荐歌曲" name="recSongs" bind:moreBtnClick="onMoreBtnClick">
+  <view class="recSongsList">
+    <block wx:for="{{fmt.sliceArray(recSongs.tracks, 6)}}" wx:key="id">
+      <view 
+        class="item" 
+        data-playlist="{{recSongs.tracks}}" 
+        data-index="{{index}}"
+        bind:tap="onSongsListItemClick"
+      >
+        <view class="left">
+          <image src="{{item.al.picUrl}}" mode="" class="album"/>
+        </view>
+        <view class="center">
+          <view class="title">{{item.name}}</view>
+          <view class="name">{{item.ar[0].name}}</view>
+        </view>
+        <view class="right">
+          <van-icon name="arrow" />
+        </view>
+      </view>
+    </block>
+  </view>
+</section>
+
+<section title="热门歌单" name="hotPlayListMenu" bind:moreBtnClick="onMoreBtnClick">
+  <playList playList="{{hotPlayList}}" />
+</section>
+
+<section title="推荐歌单" name="hotPlayListMenu" bind:moreBtnClick="onMoreBtnClick">
+  <playList playList="{{recPlayList}}" />
+</section>
+
+<section title="巅峰榜" isShowMoreBtn="{{false}}">
+  <view class="rankList" wx:if="{{isShowRankingList}}">
+    <block wx:for="{{rankingList}}" wx:key="id">
+      <view class="listItem" data-listdata="{{item}}" bind:tap="onRankListItemClick">
+        <view class="left">
+          <view class="title">{{item.name}}</view>
+          <view class="list">
+            <block wx:for="{{fmt.sliceArray(item.tracks, 3)}}" wx:key="id" wx:for-item="iten">
+              <view class="item">{{index + 1}}.{{iten.name}} - {{iten.ar[0].name}}</view>
+            </block>
+          </view>
+        </view>
+        <view class="right">
+          <image src="{{item.coverImgUrl}}" mode="widthFix" class="album"/>
+          <view class="count">{{fmt.formatCount(item.playCount)}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</section>
+
+<view class="playBarPlaceHolder" wx:if="{{!!currentSongData}}"></view>
+<view class="playBar" wx:if="{{!!currentSongData}}">
+  <view class="left">
+    <image 
+      src="{{currentSongData.al.picUrl}}" 
+      class="album {{addAnim ? 'anim' : ''}}"
+      style="animation-play-state: {{isPlaying ? 'running' : 'paused'}};"
+    />
+    <view class="name">{{currentSongData.name}}</view>
+  </view>
+  <view class="right">
+    <image 
+      src="/assets/images/music/{{isPlaying ? 'pause_icon' : 'play_icon'}}.png" 
+      mode="widthFix" 
+      class="playBtn"
+      bind:tap="onPlayBtnClick"
+    />
+    <image src="/assets/images/music/playlist_icon.png" mode="widthFix" class="musicMenu"/>
+  </view>
+</view>

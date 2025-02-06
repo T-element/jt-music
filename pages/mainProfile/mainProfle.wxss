@@ -1,0 +1,73 @@
+page {
+  padding: 15px;
+  background-color: #F3F3F3;
+  box-sizing: border-box;
+}
+
+.loginBox {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.loginBox .icon {
+  width: 45px;
+  margin: 0 10px 0 15px;
+  border-radius: 50%;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  height: 85px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.tabs .tab {
+  text-align: center;
+  font-size: 12px;
+}
+
+.tabs .tab image{
+  width: 35px;
+  margin-bottom: 5px;
+}
+
+.myPlayList {
+  margin-top: 15px;
+}
+
+.myPlayList .title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.myPlayList .createList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  margin-top: 15px;
+  padding: 0 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: #fff;
+  color: #999;
+}
+
+.myPlayList .createList .icon {
+  font-size: 18px;
+}
+
+.userInput {
+  margin: 15px;
+  padding: 7px 10px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  font-size: 14px;
+}

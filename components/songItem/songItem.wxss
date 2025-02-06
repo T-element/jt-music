@@ -1,0 +1,39 @@
+/* components/songItem/songItem.wxss */
+.songItem {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.songItem .left {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.songItem .center {
+  flex: 1;
+}
+
+.songItem .center .info {
+  margin-top: 2px;
+}
+
+.songItem .center .info .tag {
+  width: 19px;
+  vertical-align: -1px;
+}
+
+.songItem .center .info .name {
+  margin-left: 3px;
+  font-size: 12px;
+}
+
+.songItem .right {
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  color: #aaa;
+}

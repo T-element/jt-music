@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "推荐视频",
+  "onReachBottomDistance": 100,
+  "enablePullDownRefresh": true
+}

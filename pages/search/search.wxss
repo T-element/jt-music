@@ -1,0 +1,123 @@
+/* pages/search/search.wxss */
+page {
+  --search-background-color: #fff;
+
+  background-color: #FAFAFA;
+}
+
+.hotSearch {
+  padding: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.tags .tag {
+  margin: 5px 4px;
+  padding: 4px 8px;
+  border-radius: 7px;
+  background-color: #fff;
+}
+
+.tags .highlight {
+  color: #26CE8A;
+}
+
+.searchSuggest {
+  padding: 5px 15px;
+  box-sizing: border-box;
+}
+
+.searchSuggest .title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #48CF8A;
+}
+
+.searchSuggest .list .item{
+  display: flex;
+  align-items: center;
+}
+
+.searchSuggest .list .item .icon {
+  width: 35px;
+  margin-top: 2px;
+}
+
+.searchSuggest .list .item .text {
+  flex: 1;
+  font-size: 14px;
+}
+
+.search {
+  position: relative;
+  padding: 10px;
+}
+
+.search .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+  padding-bottom: 5px;
+}
+
+.search .title .left {
+  color: #48CF8A;
+}
+
+.search .title .right {
+  color: #999;
+}
+
+.search .list {
+  height: calc(100vh - 85px);
+}
+
+.search .item {
+  display: flex;
+  align-items: center;
+  margin: 18px 0 5px;
+}
+
+.search .item .left {
+  width: 40px;
+  text-align: center;
+}
+
+.search .item .right {
+  flex: 1;
+}
+
+.search .item .right .name {
+  font-size: 16px;
+}
+
+.search .item .right .artists .icon {
+  width: 20px;
+  vertical-align: -1px;
+}
+
+.search .item .right .artists .name {
+  margin-left: 3px;
+  font-size: 12px;
+  color: #777;
+}
+
+.search .scrollToTop {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #E1DCE1;
+  text-align: center;
+  line-height: 35px;
+  z-index: 9;
+}

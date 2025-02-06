@@ -1,0 +1,11 @@
+<view class="songItem">
+  <view class="left">{{index}}</view>
+  <view class="center">
+    <view class="title">{{itemData.name}}</view>
+    <view class="info">
+      <image src="/assets/images/icons/sq_icon.png" mode="widthFix" class="tag"/>
+      <text class="name">{{itemData.ar[0].name}}</text>
+    </view>
+  </view>
+  <view class="right" catch:tap="onMoreBtnClick"><van-icon name="more-o" /></view>
+</view>

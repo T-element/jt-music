@@ -1,0 +1,13 @@
+<block wx:for="{{playListMenus}}" wx:key="cat">
+  <view class="title">{{item.cat}}</view>
+  <view class="list">
+    <block wx:for="{{item.playlists}}" wx:for-item="iten" wx:key="id">
+      <playListItem 
+        class="item" 
+        itemData="{{iten}}" 
+        data-playlist="{{item.playlists}}"
+        data-index="{{index}}"
+      />
+    </block>
+  </view>
+</block>

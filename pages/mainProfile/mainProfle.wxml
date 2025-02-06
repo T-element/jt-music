@@ -1,0 +1,37 @@
+<view class="loginBox" bind:tap="onLoginBoxClick">
+  <image src="{{avatarUrl}}" mode="widthFix" class="icon" />
+  <view class="name">{{userName}}</view>
+</view>
+
+<view class="tabs">
+  <view class="tab">
+    <image src="/assets/images/profile/favor.png" mode="widthFix" />
+    <view class="text">我的收藏</view>
+  </view>
+  <view class="tab">
+    <image src="/assets/images/profile/like.png" mode="widthFix" />
+    <view class="text">我的喜欢</view>
+  </view>
+  <view class="tab">
+    <image src="/assets/images/profile/history.png" mode="widthFix" />
+    <view class="text">历史记录</view>
+  </view>
+</view>
+
+<view class="myPlayList">
+  <view class="title">我的歌单</view>
+  <view class="createList" bind:tap="onCreateListClick">
+    <view class="text">创建歌单</view>
+    <view class="icon">+</view>
+  </view>
+</view>
+
+
+<van-dialog 
+  use-slot 
+  title="创建歌单" 
+  show="{{ isDialogShow }}" 
+  show-cancel-button
+>
+  <input type="text" placeholder="请输入歌单名称" class="userInput" />
+</van-dialog>

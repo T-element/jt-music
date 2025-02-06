@@ -1,0 +1,120 @@
+page {
+  position: relative;
+  height: 100vh;
+}
+
+.pageTitles {
+  display: flex;
+  color: #AA9C9F;
+}
+
+.pageTitles .active {
+  color: #fff;
+}
+
+.pageTitles .divider {
+  margin: 0 3px;
+}
+
+.bgImage {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bgCover {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(12px);
+}
+
+.player {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 45rpx 30px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.album {
+  flex: 1;
+}
+
+.album .image {
+  width: 100%;
+  border-radius: 7px;
+}
+
+.info .title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.info .name {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.lyric {
+  margin: 20rpx 0;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.progress {
+  /* width: 100%; */
+  margin: 5px 5px 5px 8px;
+  font-size: 12px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.controls image {
+  width: 30px;
+  height: 30px;
+}
+
+.controls .mode {
+  width: 35px;
+  height: 35px;
+}
+
+.controls .play {
+  width: 72px;
+  height: 72px;
+}
+
+.lyricList {
+  height: 100%;
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+  line-height: 35px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.lyricList .active {
+  color: #0f0;
+}

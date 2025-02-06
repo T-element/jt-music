@@ -1,0 +1,21 @@
+page {
+  padding: 0 10px 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.list .item {
+  width: 49%;
+  margin-top: 5px;
+}
